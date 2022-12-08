@@ -25,7 +25,7 @@ multi_select_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list, key=1)
 df_temp = pd.DataFrame()
 
-selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=1)	
+selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2)	
 
 if multi_select_temp:
     for i in multi_select_temp:
@@ -59,10 +59,10 @@ if multi_select_temp:
 #월 평균 해수면 온도 정보
 st.subheader("전 세계 해수면 온도 변화")
 multi_select_sea_temp = st.multiselect('지역을 선택해주세요!',
-                             multi_select_list, key=2)
+                             multi_select_list, key=3)
 df_sea_temp = pd.DataFrame()
 
-selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2)	
+selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=4)	
 
 if multi_select_sea_temp:
     for i in multi_select_sea_temp:

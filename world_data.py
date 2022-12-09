@@ -53,7 +53,8 @@ if multi_select_temp:
         ax1 = sns.heatmap(heatmap1_data, cmap="coolwarm", center=0)
         ax1.set(xlabel="", ylabel="")
         st.write(fig1)
-
+        
+st.markdown("***")
 # 세계 겨울 온도 정보
 st.write("Winter Temperature anomaly")
 

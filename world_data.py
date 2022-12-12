@@ -39,18 +39,18 @@ st.write("가뭄 심각도 지수는 파머 선생님께서 만드신 지수로,
 image0 = Image.open('comparison.png')
 st.image(image0)
 
-Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
-Drought = pd.DataFrame(Drought)
-Drought.columns = ['Year', 'Annual average', '9-yr average']
-Drought = Drought[['Year', 'Annual average']]
-Drought = Drought.iloc[91:132]
-Drought['Year'] = Drought['Year'].astype('str')
-Drought['Annual average']=  Drought['Annual average'].astype('float')
-Drought['Year'] = Drought['Year']
-Drought.index = Drought['Year'].apply(lambda d: datetime.strptime(d, "%Y"))
-Drought = Drought.drop(['Year'], axis=1)
-st.write(Drought)
-st.line_chart(Drought)
+if st.button("가뭄 데이터 보기"):
+    Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
+    Drought = pd.DataFrame(Drought)
+    Drought.columns = ['Year', 'Annual average', '9-yr average']
+    Drought = Drought[['Year', 'Annual average']]
+    Drought = Drought.iloc[91:132]
+    Drought['Year'] = Drought['Year'].astype('str')
+    Drought['Annual average']=  Drought['Annual average'].astype('float')
+    Drought['Year'] = Drought['Year']
+    Drought.index = Drought['Year'].apply(lambda d: datetime.strptime(d, "%Y"))
+    Drought = Drought.drop(['Year'], axis=1)
+    st.line_chart(Drought)
 
 #fig1 = plt.figure(figsize=(20,10))
 #plt.ylim(-6, 6) #y축 범위

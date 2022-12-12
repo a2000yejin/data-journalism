@@ -19,6 +19,50 @@ def draw_chart(df_data):
     st.write(pd.DataFrame(df_data))
 
 
+## 홈페이지 타이틀과 설명
+st.title("US 가뭄과 옥수수 사용량 분석 분석")
+st.write(
+    "분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."
+)
+
+# 가뭄데이터 테이블 보기
+#if st.button("가뭄 데이터 보기"):
+#    st.write("### 데이터")
+#    st.write("전체 데이터는 1980년 부터 2020년까지의 미국의 강우량을 기록하고 있다.")
+#    st.write(pd.DataFrame(df))
+
+    # st.expander는 접고 펼칠 수 있는 박스를 그려준다.
+#    with st.expander("데이터 설명"):
+        # st.code는 code형식의 데이터를 보여줄 때 사용된다. language='' 옵션을 사용하면 해당 언어에 맞게 칼라코딩을 해준다.
+#        st.code(
+            """D0: Abnormal Dry \nD1: asdf \nD2: adsf \nD3: asdf \nD4: asdf
+            """
+#        )
+
+
+# 옥수수 생산량과 가뭄 비교
+st.header("옥수수 생산량과 가뭄 비교")
+st.write("보고싶은 지도를 선택해주세요!")
+selected_item = st.radio("선택", ("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+if selected_item == "지역별 가뭄":
+    st.write("미국 지역별 가뭄 (2022.12.06)")
+    from PIL import Image
+    image1 = Image.open('us_drought.png')
+    st.image(image1)
+elif selected_item == "지역별 옥수수 생산량":
+    st.write("미국 지역별 옥수수 생산량")
+    from PIL import Image
+    image2 = Image.open('cornyield.png')
+    st.image(image2)
+elif selected_item == "전년대비 지역별 옥수수 생산량":
+    st.write("미국 지역별 전년대비 옥수수 생산량")
+    from PIL import Image
+    image3 = Image.open('cornyieldcomparison.png')
+    st.image(image3)
+
+st.subheader("겹쳐봅시다!")
+    
 
 #월 평균 세계 기온 정보
 total_climate = load_data('climate_change.csv')

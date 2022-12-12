@@ -89,8 +89,8 @@ plt.xticks(rotation = 45)
 st.pyplot(fig3)
 
 st.write("미국 기후에 따른 옥수수 생산량 비교")
-    image0 = Image.open('comparison.png')
-    st.image(image0)
+image0 = Image.open('comparison.png')
+st.image(image0)
 
 #---가뭄과 생산량 비교
 #st.write(

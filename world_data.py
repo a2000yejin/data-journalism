@@ -70,7 +70,6 @@ US_Maize['Maize Production (ton)'] = US_Maize['Maize Production (ton)'].astype(i
 if st.button("옥수수 생산량 데이터 자세히"):
     st.bar_chart(US_Maize)
 
-
 # 옥수수 생산량과 가뭄 비교
 st.markdown("<hr>", unsafe_allow_html=True)
 st.write("2012년 이후로 PDSI 지수가 급락하진 않은 것 같아 안심하긴 이르다고. 사실상 미국에선 2000년부터 2022년까지 23년 간 대가뭄이 지속되는 추세야.")

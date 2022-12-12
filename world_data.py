@@ -229,7 +229,7 @@ with open("countries.geojson") as f:
 self_sufficiency = pd.read_csv("grain self-sufficiency.csv")
 fig3 = px.choropleth(self_sufficiency, geojson=countries, locations='Country', locationmode='country names', color='maize self-sufficiency ratio(production/consumption)',
                            color_continuous_scale="Viridis",
-                           range_color=(0, 4535.631111)
+                           range_color=(0, 2000)
                           )
 fig3.update_layout(autosize=False, margin={"r":0,"t":0,"l":0,"b":0}, width=1000)
 st.write(fig3)

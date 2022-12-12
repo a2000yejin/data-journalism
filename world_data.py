@@ -123,6 +123,7 @@ if multi_select_sea_temp:
         st.write(fig2)
 
 # ==============
+# 자급률
 with open("countries.geojson") as f:
     countries = json.load(f)
 

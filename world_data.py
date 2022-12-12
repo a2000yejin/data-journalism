@@ -36,7 +36,7 @@ st.write("다음은 1980년부터 2020년까지 옥수수 최대 생산국인 �
          "온도 및 강수량 데이터를 사용해 상대적 건조도를 충정한 값으로 -10은 건조, +10은 습윤을 뜻하지.")
         
 
-Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp94)
+Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp94')
 Drought = pd.DataFrame(Drought)
 
 Drought.columns = ['Year', 'Annual average', '9-yr average']

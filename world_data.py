@@ -35,7 +35,7 @@ climate_change_def = '<p color:Gray;">*기후위기: 기후 변화로 인해 위
 st.markdown(climate_change_def, unsafe_allow_html=True)
 
 
-st.subheader("가뭄의 시기와 옥수수 생산량")
+st.subheader("가뭄이 발생한 시기에 옥수수 생산량이 줄어드는 거구나..!")
 st.write("다음은 1980년부터 2020년까지 옥수수 최대 생산국인 **미국의 '파머 가뭄 심각도 지수(PDSI)'와 옥수수 생산량 수치야.**")
 st.write("가뭄 심각도 지수는 파머 선생님께서 만드신 지수로, 세계적으로 널리 사용돼.",
          "파머 선생님은 가뭄을 일반적으로 사소한 불편 혹은 고통을 발생시키는 수분 부족이 아니라 심한 인명 혹은 재산의 손실을 일으키는 현상으로 최소 2-3개월, 길게는 1년 넘게 수분 부족이 지속되는 현상으로 정의하셨어.",
@@ -74,6 +74,9 @@ if st.button("옥수수 생산량 데이터 자세히"):
 # 옥수수 생산량과 가뭄 비교
 st.markdown("<hr>", unsafe_allow_html=True)
 st.write("2012년 이후로 PDSI 지수가 급락하진 않은 것 같아 안심하긴 이르다고. 사실상 미국에선 2000년부터 2022년까지 23년 간 대가뭄이 지속되는 추세야.")
+st.write("미국 남서부 지역에서는 주기적으로 가뭄을 겪어왔지만, 20년을 주기로 완화되는 경향을 보였어.",
+         "그런데, 이번 가뭄은 20년이 넘도록 미국을 괴롭혀 와, 1200년 만의 최악의 가뭄으로 여겨지고 있어.")
+st.text("")
 st.write("보고싶은 지도를 선택해주세요!")
 selected_item = st.radio("선택", ("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
@@ -92,13 +95,19 @@ elif selected_item == "전년대비 지역별 옥수수 생산량":
     image3 = Image.open('cornyieldcomparison.png')
     st.image(image3)
 
-st.write("가뭄량과 옥수수 생산량 데이터를 겹쳐봅시다! ... 내일까지 interactive하게 구")
+st.write("더 무서운 건 뭔 지 알아? 이 가뭄이 언제 끝날지 모른다는 점이야. 가뭄이 시작된 지 20년도 넘은 2021년이 최악으로 건조한 해로 기록된 만큼, 전문가들은 가뭄이 앞으로 10년 넘게 이어질 수도 있다고 봐.",
+         "듣기만 해도 무시무시한 ‘메가가뭄’이 진행 중인 것이지.")
+st.write("실제로 전미 옥수수 생산량 1위를 자랑하던 아이오와주도 대가뭄 앞에선 맥을 못 추리고 있어. 경지 면적의 41%가 메말라 농사를 포기하는 농부들이 속출했어.")
     
 
 #월 평균 세계 기온 정보
+st.subheader("정말 큰일이네… 앞으로도 가뭄이 자주 발생할 것 같아?")
+st.write("기온이 상승하면 가뭄이 발생할 가능성이 높아져. 기온이 높아 증발량이 많아지면 표면 수분이 줄기 때문이지.",
+         "또한 기온이 상승하면 강우량의 변동폭이 커져 극심한 가뭄과 홍수가 많이 발생할 수 있대.")
+st.write("그런데 미국뿐 아니라 세계적으로 기온이 오르고 있어. 아래 데이터는 육지의 대기 온도와 해수면 온도를 합친 값이 1951년-1980년 평균으로부터 얼마나 이탈했는지 보여주는 자료야.")
+st.write("원하는 지역과 데이터 형식을 선택해서 살펴봐봐. 점점 뜨거워지는 지구를 볼 수 있어.")
+
 total_climate = load_data('climate_change.csv')
-st.subheader("전 세계 월단위 온도 변화")
-st.write("The combined land-surface air and sea-surface water temperature anomaly is given as the deviation from the 1951–1980 mean.")
 multi_select_list = ['World', 'Northern Hemisphere', 'Southern Hemisphere']
 multi_select_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list, key=1)
@@ -136,8 +145,9 @@ if multi_select_temp:
 st.markdown("***")
 
 # 세계 겨울 온도 정보
-st.write("Winter Temperature anomaly")
-
+st.write("겨울 기온이 올라가는 현상이 특히 문제야. 겨울 기온이 상승하면 북반구가 눈으로 얻는 강우량이 줄어들지.",
+         "연간 강우량이 일정하더라도 눈이 쌓여 단단해진 층(snowpack)이 줄어들면 수자원 공급에 문제가 생기고 연어 등 다양한 생물의 생태계에 큰 교란이 일어나.",
+         "또한 눈이 줄면 지구 복사열이 줄어들어 기후 온난화가 심화되는 악순환이 일어나지.")
 def show_winter_temp(region):
     region_temp = total_climate[total_climate['Entity'] == region][['Date', 'Temperature anomaly']]
     region_temp = region_temp.dropna()
@@ -161,8 +171,10 @@ if st.button("Southern Hemisphere"):
 
 # ===================
 #월 평균 해수면 온도 정보
-st.subheader("전 세계 월단위 해수면 온도 변화")
-st.write("This is measured at a nominal depth of 20cm, and given relative to the average temperature from the period of 1961 - 1990.")
+
+st.markdown("***")
+st.write("아래는 해수면 온도가 1961년-1990년 평균으로부터 얼마나 이탈했는지 보여주는 자료야. 해수면 온도의 변화가 심할수록 극한 기상이 반복되어 가뭄이 심해진대.")
+
 multi_select_list2 = ['World', 'Northern Hemisphere', 'Southern Hemisphere', 'Tropics']
 multi_select_sea_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list2, key=3)

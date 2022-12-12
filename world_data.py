@@ -15,6 +15,27 @@ def load_data(filename):
 def draw_chart(df_data):
     st.write(pd.DataFrame(df_data))
 
+    
+#옥수수 생산량과 가뭄 비교
+st.subheader("옥수수 생산량과 가뭄 비교")
+st.write("보고싶은 지도를 선택해주세요!")
+selected_item = st.radio("선택", ("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+if selected_item == "지역별 가뭄":
+    st.write("미국 지역별 가뭄 (2022.12.06)")
+    from PIL import Image
+    image1 = Image.open('us_drought.png')
+    st.image(image1)
+elif selected_item == "지역별 옥수수 생산량":
+    st.write("미국 지역별 옥수수 생산량")
+    from PIL import Image
+    image2 = Image.open('cornyield.png')
+    st.image(image2)
+elif selected_item == "전년대비 지역별 옥수수 생산량":
+    st.write("미국 지역별 전년대비 옥수수 생산량")
+    from PIL import Image
+    image3 = Image.open('cornyieldcomparison.png')
+    st.image(image3)
 
 
 #월 평균 세계 기온 정보

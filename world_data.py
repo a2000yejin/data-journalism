@@ -35,7 +35,10 @@ st.write("다음은 1980년부터 2020년까지 옥수수 최대 생산국인 **
 st.write("가뭄 심각도 지수는 파머 선생님께서 만드신 지수로, 세계적으로 널리 사용돼.",
          "파머 선생님은 가뭄을 일반적으로 사소한 불편 혹은 고통을 발생시키는 수분 부족이 아니라 심한 인명 혹은 재산의 손실을 일으키는 현상으로 최소 2-3개월, 길게는 1년 넘게 수분 부족이 지속되는 현상으로 정의하셨어.",
          "온도 및 강수량 데이터를 사용해 상대적 건조도를 충정한 값으로 -10은 건조, +10은 습윤을 뜻하지.")
-        
+
+st.write("**그래서 가뭄… 지금 얼마나 심각한 건데** 😱")
+st.write("PDSI 지수가 뚝 떨어졌던 해가 언제인지 그래프에서 확인해 보지 않을래?")
+st.write("1988, 2000, 2012년도에는 육안으로 보아도 PDSI 지수가 눈에 띄게 급락했지. 대가뭄으로 인해 옥수수 생산량이 뚝 떨어지게 된 눈물겨운 시기였어.")        
 image0 = Image.open('comparison.png')
 st.image(image0)
 Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
@@ -64,7 +67,8 @@ if st.button("옥수수 생산량 데이터 자세히"):
 
 
 # 옥수수 생산량과 가뭄 비교
-
+st.markdown("<hr>", unsafe_allow_html=True)
+st.write("2012년 이후로 PDSI 지수가 급락하진 않은 것 같아 안심하긴 이르다고. 사실상 미국에선 2000년부터 2022년까지 23년 간 대가뭄이 지속되는 추세야.")
 st.write("보고싶은 지도를 선택해주세요!")
 selected_item = st.radio("선택", ("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)

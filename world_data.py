@@ -66,10 +66,10 @@ US_Maize = pd.DataFrame(US_Maize)
 US_Maize = US_Maize.drop(['국가별'])
 US_Maize.columns =['Maize Production']
 US_Maize['Maize Production'] = US_Maize['Maize Production'].astype(int)
-st.write(US_Maize)
 
-#if st.button("옥수수 생산량 데이터 보기"):
-    #st.line_chart(Drought)
+if st.button("옥수수 생산량 데이터 보기"):
+    st.line_chart(US_Maize)
+    
 xs=US_Maize.index.to_list()			
 ys=US_Maize['Maize Production'].to_list()			
 fig2 = plt.figure(figsize=(20,10))

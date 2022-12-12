@@ -76,9 +76,9 @@ st.pyplot(fig2)
 import matplotlib.pyplot as plt
 import numpy as np
 
-fig3 = plt.figure(figsize=(20,10)) # 그림 사이즈 지정 (가로 14인치, 세로 5인치)
-ax1 = fig3.add_subplot(2, 1, 1) # 서브플롯들을 2 x 1 배열로 배치 그중 첫번째
-ax2 = fig3.add_subplot(2, 1, 2) # 서브플롯들을 2 x 1 배열로 배치 그중 두번째
+fig3 = plt.figure(figsize=(20,10)) 
+ax1 = fig3.add_subplot(2, 1, 1)  
+ax2 = fig3.add_subplot(2, 1, 2) 
 
 ax1.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
 ax1.set_ylim(-6,6)

@@ -29,7 +29,14 @@ st.subheader("엥? 기후 위기랑 옥수수가 무슨 상관인데?")
 st.write("기후 위기란 기후 변화로 인해 위험이 증가하는 현실을 뜻해. 지구의 평균 기온이 점진적으로 상승하면서 전지구적 기후 패턴이 급격하게 변화하는 현상을 통틀어 일컫는 말이지.")
 st.write("옥수수(maize)는 기후 변화에 민감한 주식이야. 특히 가뭄과 같은 기후 현상으로 인해 고온 건조한 날씨가 지속될 시 옥수수 생산에 치명적이지.") 
 
-Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
+st.subheader("가뭄의 시기와 옥수수 생산량")
+st.write("다음은 1980년부터 2020년까지 옥수수 최대 생산국인 미국의 '파머 가뭄 심각도 지수(PDSI)'와 옥수수 생산량 수치야.",
+         "가뭄 심각도 지수는 파머 선생님께서 만드신 지수로, 세계적으로 널리 사용돼.",
+         "파머 선생님은 가뭄을 일반적으로 사소한 불편 혹은 고통을 발생시키는 수분 부족이 아니라 심한 인명 혹은 재산의 손실을 일으키는 현상으로 최소 2-3개월, 길게는 1년 넘게 수분 부족이 지속되는 현상으로 정의하셨어.",
+         "온도 및 강수량 데이터를 사용해 상대적 건조도를 충정한 값으로 -10은 건조, +10은 습윤을 뜻하지.")
+        
+
+Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp94
 Drought = pd.DataFrame(Drought)
 
 Drought.columns = ['Year', 'Annual average', '9-yr average']
@@ -68,10 +75,22 @@ plt.bar(xs, ys, width=0.6, color='grey')
 plt.xticks(rotation = 45)
 st.pyplot(fig2)
 
+fig3 = plt.figure(figsize=(20,10)) 
+ax1 = fig3.add_subplot(2, 1, 1) 
+ax2 = fig3.add_subplot(2, 1, 2) 
+
+ax1.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
+ax1.set_ylim(-6,6)
+ax1.set_xlabel('Year')
+ax1.set_ylabel('Drought')
+ax2.bar(xs, ys, color='deeppink', label='M/T', alpha=0.7, width=0.7)
+ax2.set_ylabel('Maize')
+plt.xticks(rotation = 45)
+st.pyplot(fig3)
+
 st.write("미국 기후에 따른 옥수수 생산량 비교")
-from PIL import Image
-image0 = Image.open('comparison.png')
-st.image(image0)
+    image0 = Image.open('comparison.png')
+    st.image(image0)
 
 #---가뭄과 생산량 비교
 #st.write(

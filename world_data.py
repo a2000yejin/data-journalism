@@ -48,7 +48,7 @@ Drought['Year'] = Drought['Year'].astype('int')
 Drought['Year'] = Drought['Year'].astype('int')
 Drought['Annual average']=  Drought['Annual average'].astype('float')
 Drought.index = Drought['Year']
-Drought = Drought.drop(['Year'], axis=1]
+Drought = Drought.drop(['Year'], axis=1])
 st.write(Drought)
 #st.line_chart(Drought)
 

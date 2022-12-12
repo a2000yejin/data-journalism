@@ -49,7 +49,7 @@ Drought['Year'] = Drought['Year']
 Drought.index = Drought['Year'].apply(lambda d: datetime.strptime(d, "%Y"))
 Drought = Drought.drop(['Year'], axis=1)
 
-if st.button("가뭄 데이터 보기"):
+if st.button("가뭄 데이터 자세히"):
     st.line_chart(Drought)
 
 #fig1 = plt.figure(figsize=(20,10))
@@ -64,10 +64,10 @@ US_Maize = pd.read_csv('US_Maize.csv',  encoding='cp949')
 US_Maize = US_Maize.loc[2]
 US_Maize = pd.DataFrame(US_Maize)
 US_Maize = US_Maize.drop(['국가별'])
-US_Maize.columns =['Maize Production']
+US_Maize.columns =['Maize Production (ton)']
 US_Maize['Maize Production'] = US_Maize['Maize Production'].astype(int)
 
-if st.button("옥수수 생산량 데이터 보기"):
+if st.button("옥수수 생산량 데이터 자세히"):
     st.line_chart(US_Maize)
     
 xs=US_Maize.index.to_list()			

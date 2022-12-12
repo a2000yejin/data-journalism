@@ -20,10 +20,10 @@ def draw_chart(df_data):
 
 
 ## 홈페이지 타이틀과 설명
-st.title("US 가뭄과 옥수수 사용량 분석 분석")
-st.write(
-    "분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."
-)
+#st.title("US 가뭄과 옥수수 사용량 분석 분석")
+#st.write(
+#    "분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."
+#)
 
 # 가뭄데이터 테이블 보기
 #if st.button("가뭄 데이터 보기"):
@@ -35,8 +35,8 @@ st.write(
 #    with st.expander("데이터 설명"):
         # st.code는 code형식의 데이터를 보여줄 때 사용된다. language='' 옵션을 사용하면 해당 언어에 맞게 칼라코딩을 해준다.
 #        st.code(
-            """D0: Abnormal Dry \nD1: asdf \nD2: adsf \nD3: asdf \nD4: asdf
-            """
+#            """D0: Abnormal Dry \nD1: asdf \nD2: adsf \nD3: asdf \nD4: asdf
+#            """
 #        )
 
 

@@ -61,7 +61,7 @@ elif selected_item == "전년대비 지역별 옥수수 생산량":
     image3 = Image.open('cornyieldcomparison.png')
     st.image(image3)
 
-st.subheader("겹쳐봅시다! ... 내일까지 지도 만들어서 ")
+st.write("가뭄량과 옥수수 생산량 데이터를 겹쳐봅시다! ... 내일까지 interactive하게 구")
     
 
 #월 평균 세계 기온 정보

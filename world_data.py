@@ -68,19 +68,6 @@ plt.bar(xs, ys, width=0.6, color='grey')
 plt.xticks(rotation = 45)
 st.pyplot(fig2)
 
-fig3 = plt.figure(figsize=(20,10)) 
-ax1 = fig3.add_subplot(2, 1, 1) 
-ax2 = fig3.add_subplot(2, 1, 2) 
-
-ax1.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
-ax1.set_ylim(-6,6)
-ax1.set_xlabel('Year')
-ax1.set_ylabel('Drought')
-ax2.bar(xs, ys, color='deeppink', label='M/T', alpha=0.7, width=0.7)
-ax2.set_ylabel('Maize')
-plt.xticks(rotation = 45)
-st.pyplot(fig3)
-
 st.write("미국 기후에 따른 옥수수 생산량 비교")
 from PIL import Image
 image0 = Image.open('comparison.png')

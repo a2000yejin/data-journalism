@@ -66,6 +66,11 @@ US_Maize = pd.read_csv('US_Maize.csv',  encoding='cp949')
 US_Maize = US_Maize.loc[2]
 US_Maize = pd.DataFrame(US_Maize)
 
+US_Maize = US_Maize.drop(['국가별'])
+US_Maize.columns =['Maize Production']
+US_Maize['Maize Production'] = US_Maize['Maize Production'].astype(int)
+
+
 xs=US_Maize.index.to_list()			
 ys=US_Maize['Maize Production'].to_list()			
 fig2 = plt.figure(figsize=(20,10))

@@ -52,14 +52,6 @@ Drought = Drought.drop(['Year'], axis=1)
 if st.button("가뭄 데이터 자세히"):
     st.line_chart(Drought)
 
-#fig1 = plt.figure(figsize=(20,10))
-#plt.ylim(-6, 6) #y축 범위
-#plt.xlabel('Year',fontsize=20) ## x축 라벨 출력
-#plt.ylabel('PDSI',fontsize=20) ## y축 라벨 출력 
-#plt.title("Drought") #그래프 이름
-#plt.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
-#st.pyplot(fig1)
-
 US_Maize = pd.read_csv('US_Maize.csv',  encoding='cp949')
 US_Maize = US_Maize.loc[2]
 US_Maize = pd.DataFrame(US_Maize)
@@ -68,29 +60,8 @@ US_Maize.columns =['Maize Production (ton)']
 US_Maize['Maize Production (ton)'] = US_Maize['Maize Production (ton)'].astype(int)
 
 if st.button("옥수수 생산량 데이터 자세히"):
-    st.line_chart(US_Maize)
-    
-xs=US_Maize.index.to_list()			
-ys=US_Maize['Maize Production'].to_list()			
-fig2 = plt.figure(figsize=(20,10))
-plt.xlabel('Year')				
-plt.ylabel('Maize Production')				
-plt.bar(xs, ys, width=0.6, color='grey')
-plt.xticks(rotation = 45)
-st.pyplot(fig2)
+    st.bar_chart(US_Maize)
 
-fig3 = plt.figure(figsize=(20,10)) 
-ax1 = fig3.add_subplot(2, 1, 1) 
-ax2 = fig3.add_subplot(2, 1, 2) 
-
-#ax1.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
-#ax1.set_ylim(-6,6)
-#ax1.set_xlabel('Year')
-#ax1.set_ylabel('Drought')
-#ax2.bar(xs, ys, color='deeppink', label='M/T', alpha=0.7, width=0.7)
-#ax2.set_ylabel('Maize')
-#plt.xticks(rotation = 45)
-#st.pyplot(fig3)
 
 st.write("미국 기후에 따른 옥수수 생산량 비교")
 

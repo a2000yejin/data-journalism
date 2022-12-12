@@ -65,7 +65,7 @@ US_Maize = US_Maize.loc[2]
 US_Maize = pd.DataFrame(US_Maize)
 US_Maize = US_Maize.drop(['국가별'])
 US_Maize.columns =['Maize Production (ton)']
-US_Maize['Maize Production'] = US_Maize['Maize Production'].astype(int)
+US_Maize['Maize Production (ton)'] = US_Maize['Maize Production (ton)'].astype(int)
 
 if st.button("옥수수 생산량 데이터 자세히"):
     st.line_chart(US_Maize)

@@ -81,6 +81,11 @@ ax2.set_ylabel('Maize')
 plt.xticks(rotation = 45)
 st.pyplot(fig3)
 
+st.write("미국 기후에 따른 옥수수 생산량 비교")
+    from PIL import Image
+    image0 = Image.open('comparison.png')
+    st.image(image0)
+
 #---가뭄과 생산량 비교
 #st.write(
 #    "가뭄 분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."

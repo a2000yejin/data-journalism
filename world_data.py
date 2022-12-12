@@ -50,7 +50,7 @@ Drought['Annual average']=  Drought['Annual average'].astype('float')
 Drought.index = Drought['Year']
 Drought = Drought.drop(['Year'], axis=1)
 st.write(Drought)
-#st.line_chart(Drought)
+st.line_chart(Drought)
 
 #fig1 = plt.figure(figsize=(20,10))
 #plt.ylim(-6, 6) #y축 범위

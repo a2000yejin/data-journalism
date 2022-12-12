@@ -7,6 +7,7 @@ from datetime import datetime
 import altair as alt
 import json
 import plotly.express as px
+from PIL import Image
 
 
 #CSV 읽기
@@ -128,7 +129,6 @@ elif selected_item == "지역별 옥수수 생산량":
     st.image(image2)
 elif selected_item == "전년대비 지역별 옥수수 생산량":
     st.write("미국 지역별 전년대비 옥수수 생산량")
-    from PIL import Image
     image3 = Image.open('cornyieldcomparison.png')
     st.image(image3)
 

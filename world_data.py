@@ -90,7 +90,7 @@ st.pyplot(fig3)
 
 
 # 옥수수 생산량과 가뭄 비교
-st.header("옥수수 생산량과 가뭄 비교")
+st.subheader("옥수수 생산량과 가뭄 비교")
 st.write("보고싶은 지도를 선택해주세요!")
 selected_item = st.radio("선택", ("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)

@@ -47,7 +47,8 @@ Drought = Drought.iloc[91:132]
 Drought['Year'] = Drought['Year'].astype('int')
 Drought['Year'] = Drought['Year'].astype('int')
 Drought['Annual average']=  Drought['Annual average'].astype('float')
-st.line_chart(Drought)
+st.write(Drought)
+#st.line_chart(Drought)
 
 #fig1 = plt.figure(figsize=(20,10))
 #plt.ylim(-6, 6) #y축 범위

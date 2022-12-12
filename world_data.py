@@ -76,8 +76,8 @@ st.write("2012년 이후로 PDSI 지수가 급락하진 않은 것 같아 안심
 st.write("미국 남서부 지역에서는 주기적으로 가뭄을 겪어왔지만, 20년을 주기로 완화되는 경향을 보였어.",
          "그런데, 이번 가뭄은 20년이 넘도록 미국을 괴롭혀 와, 1200년 만의 최악의 가뭄으로 여겨지고 있어.")
 st.text("")
-st.write("보고싶은 지도를 선택해주세요!")
-selected_item = st.radio(("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
+
+selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
     st.write("미국 지역별 가뭄 (2022.12.06)")

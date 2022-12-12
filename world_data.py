@@ -21,23 +21,6 @@ def draw_chart(df_data):
 
 #홈페이지 타이틀과 설명
 st.title("몇 년 뒤... 더 이상 팝콘을 못 먹게 될 수도 있다? 🍿🥺")
-#st.write(
-#    "분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."
-#)
-
-# 가뭄데이터 테이블 보기
-#if st.button("가뭄 데이터 보기"):
-#    st.write("### 데이터")
-#    st.write("전체 데이터는 1980년 부터 2020년까지의 미국의 강우량을 기록하고 있다.")
-#    st.write(pd.DataFrame(df))
-
-    # st.expander는 접고 펼칠 수 있는 박스를 그려준다.
-#    with st.expander("데이터 설명"):
-        # st.code는 code형식의 데이터를 보여줄 때 사용된다. language='' 옵션을 사용하면 해당 언어에 맞게 칼라코딩을 해준다.
-#        st.code(
-#            """D0: Abnormal Dry \nD1: asdf \nD2: adsf \nD3: asdf \nD4: asdf
-#            """
-#        )
 
 
 
@@ -93,6 +76,24 @@ ax2.set_ylabel('Maize')
 plt.xticks(rotation = 45)
 st.pyplot(fig3)
 
+#---가뭄과 생산량 비교
+#st.write(
+#    "가뭄 분석에 사용한 전체 데이터는 다음과 같다. 데이터를 살펴보려면 아래의 <가뭄 데이터 보기> 버튼을 눌러보자."
+#)
+
+# 가뭄데이터 테이블 보기
+#if st.button("가뭄 데이터 보기"):
+#    st.write("### 데이터")
+#    st.write("전체 데이터는 2022년 각 주의 데이터를 기록하고 있다.")
+#    st.write(pd.DataFrame(df))
+
+    # st.expander는 접고 펼칠 수 있는 박스를 그려준다.
+#    with st.expander("데이터 설명"):
+        # st.code는 code형식의 데이터를 보여줄 때 사용된다. language='' 옵션을 사용하면 해당 언어에 맞게 칼라코딩을 해준다.
+#        st.code(
+#            """D0: Abnormal Dry \nD1: asdf \nD2: adsf \nD3: asdf \nD4: asdf
+#            """
+#        )
 
 # 옥수수 생산량과 가뭄 비교
 st.subheader("옥수수 생산량과 가뭄 비교")

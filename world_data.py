@@ -36,27 +36,26 @@ st.write("가뭄 심각도 지수는 파머 선생님께서 만드신 지수로,
          "파머 선생님은 가뭄을 일반적으로 사소한 불편 혹은 고통을 발생시키는 수분 부족이 아니라 심한 인명 혹은 재산의 손실을 일으키는 현상으로 최소 2-3개월, 길게는 1년 넘게 수분 부족이 지속되는 현상으로 정의하셨어.",
          "온도 및 강수량 데이터를 사용해 상대적 건조도를 충정한 값으로 -10은 건조, +10은 습윤을 뜻하지.")
         
+image0 = Image.open('comparison.png')
+st.image(image0)
 
 Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
 Drought = pd.DataFrame(Drought)
-
 Drought.columns = ['Year', 'Annual average', '9-yr average']
-
 Drought = Drought[['Year', 'Annual average']]
 Drought = Drought.iloc[91:132]
-
 Drought['Year'] = Drought['Year'].astype('int')
-
 Drought['Year'] = Drought['Year'].astype('int')
 Drought['Annual average']=  Drought['Annual average'].astype('float')
+st.line_chart(Drought)
 
-fig1 = plt.figure(figsize=(20,10))
-plt.ylim(-6, 6) #y축 범위
-plt.xlabel('Year',fontsize=20) ## x축 라벨 출력
-plt.ylabel('PDSI',fontsize=20) ## y축 라벨 출력 
-plt.title("Drought") #그래프 이름
-plt.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
-st.pyplot(fig1)
+#fig1 = plt.figure(figsize=(20,10))
+#plt.ylim(-6, 6) #y축 범위
+#plt.xlabel('Year',fontsize=20) ## x축 라벨 출력
+#plt.ylabel('PDSI',fontsize=20) ## y축 라벨 출력 
+#plt.title("Drought") #그래프 이름
+#plt.plot(Drought['Year'],Drought['Annual average'],color='blue',linestyle='-',marker='o')
+#st.pyplot(fig1)
 
 US_Maize = pd.read_csv('US_Maize.csv',  encoding='cp949')
 US_Maize = US_Maize.loc[2]
@@ -90,8 +89,7 @@ plt.xticks(rotation = 45)
 st.pyplot(fig3)
 
 st.write("미국 기후에 따른 옥수수 생산량 비교")
-image0 = Image.open('comparison.png')
-st.image(image0)
+
 
 #---가뭄과 생산량 비교
 #st.write(

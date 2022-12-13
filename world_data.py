@@ -55,7 +55,7 @@ st.write("반대로 1983년, 2000년도에는 PDSI 지수가 대폭 상승했어
 
 image0 = Image.open('comparison.png')
 st.image(image0)
-caption1 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수와 옥수수 생산량(단위: 10억톤)></p>'
+caption1 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수와 옥수수 생산량(단위: 1억톤)></p>'
 st.markdown(caption1, unsafe_allow_html=True)
 Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
 Drought = pd.DataFrame(Drought)
@@ -267,6 +267,7 @@ st.write(fig3)
 
 caption8 = '<p style = "color:gray;"><캡션: 세계 옥수수 자급률 (단위: 톤/톤)><br>최대값은 4535가 넘지만  2000을 넘는 국가는 5개고 나머지는 2000 이하이기 때문에 자급률 간 차이를 자세히 보고자 2000 이상은 노란색으로 처리함<br>흰색은 데이터 값이 없는 부분임. 유럽은 EU 통합지역으로 데이터가 주어져 나라별 데이터는 표시하지 못하였지만 우리의 초점은 한국의 낮은 자급률임.</p>'
 st.markdown(caption8, unsafe_allow_html=True)
+st.text("")
 
 
 st.write("그럼 우리나라는 어디서 옥수수를 수입해 오는 걸까? 대한무역협회에 따르면 우리나라는 아르헨티나에 이어 미국으로부터 옥수수를 가장 많이 수입하고 있어. 우리가 지금까지 미국의 옥수수 생산량을 살펴본 이유도 미국이 옥수수 생산량 1위 국가이기도 하지만, 우리나라 옥수수 수급에 특히 많은 영향을 끼치고 있는 나라이기 때문이야.")

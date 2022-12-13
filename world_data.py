@@ -55,7 +55,7 @@ st.write("반대로 1983년, 2000년도에는 PDSI 지수가 대폭 상승했어
 
 image0 = Image.open('comparison.png')
 st.image(image0)
-caption1 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수와 옥수수 생산량></p>'
+caption1 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수와 옥수수 생산량(단위: 10억톤)></p>'
 st.markdown(caption1, unsafe_allow_html=True)
 Drought = pd.read_csv('Drought_PDSI(1895~).csv',encoding='cp949')
 Drought = pd.DataFrame(Drought)
@@ -82,6 +82,8 @@ US_Maize['Maize Production (ton)'] = US_Maize['Maize Production (ton)'].astype(i
 
 if st.button("옥수수 생산량 데이터 자세히"):
     st.bar_chart(US_Maize)
+    caption10 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 옥수수 생산량 (단위:톤)></p>'
+    st.markdown(caption9, unsafe_allow_html=True)
 
 # 옥수수 생산량과 가뭄 비교
 st.markdown("<hr>", unsafe_allow_html=True)

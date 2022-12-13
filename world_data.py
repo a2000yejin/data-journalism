@@ -261,8 +261,7 @@ fig3 = px.choropleth(self_sufficiency, geojson=countries, locations='Country', l
 fig3.update_layout(autosize=False, margin={"r":0,"t":0,"l":0,"b":0}, width=1000)
 st.write(fig3)
 
-caption8 = '<p style = "color:gray;"><캡션: 세계 옥수수 자급률 (단위: 톤/톤)><br>최대값은 4535가 넘지만  2000을 넘는 국가는 5개고 나머지는 2000 이하이기 때문에 자급률 간 차이를 자세히 보고자 2000 이상은 노란색으로 처리함<br></p>',
-'<p style = "color:gray;">흰색은 데이터 값이 없는 부분임. 유럽은 EU 통합지역으로 데이터가 주어져 나라별 데이터는 표시하지 못하였지만 우리의 초점은 한국의 낮은 자급률임.</p>'
+caption8 = '<p style = "color:gray;"><캡션: 세계 옥수수 자급률 (단위: 톤/톤)><br>최대값은 4535가 넘지만  2000을 넘는 국가는 5개고 나머지는 2000 이하이기 때문에 자급률 간 차이를 자세히 보고자 2000 이상은 노란색으로 처리함<br>흰색은 데이터 값이 없는 부분임. 유럽은 EU 통합지역으로 데이터가 주어져 나라별 데이터는 표시하지 못하였지만 우리의 초점은 한국의 낮은 자급률임.</p>'
 st.markdown(caption8, unsafe_allow_html=True)
 
 

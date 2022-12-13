@@ -83,7 +83,7 @@ US_Maize['Maize Production (ton)'] = US_Maize['Maize Production (ton)'].astype(i
 if st.button("옥수수 생산량 데이터 자세히"):
     st.bar_chart(US_Maize)
     caption10 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 옥수수 생산량 (단위:톤)></p>'
-    st.markdown(caption9, unsafe_allow_html=True)
+    st.markdown(caption10, unsafe_allow_html=True)
 
 # 옥수수 생산량과 가뭄 비교
 st.markdown("<hr>", unsafe_allow_html=True)

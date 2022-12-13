@@ -143,7 +143,7 @@ elif selected_item == "전년대비 지역별 옥수수 생산량":
 
 st.write("현재 2022년 미국의 가뭄 현황과 전년 대비 옥수수 생산량 증감률을 비교하면 다음과 같아.")   
 from PIL import Image
-image1 = Image.open('지도 비교.png')
+image1 = Image.open('comparison.png')
 st.image(image1)
 st.write("동그라미 친 주요 옥수수 생산 지역에서 특히 가뭄이 심하고, 옥수수 생산량도 감소한 것을 볼 수 있어.")  
     

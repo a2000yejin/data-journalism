@@ -100,10 +100,18 @@ df = pd.read_csv("maize harvest areas.csv")
 selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
-    image1 = Image.open('us_drought.png')
-    st.image(image1)
-    caption2 = '<p style = "color:gray;"><캡션: 미국 지역별 가뭄></p>'
-    st.markdown(caption2, unsafe_allow_html=True)
+    fig = go.Figure(data=go.Choropleth(
+    locations=df['States'], # Spatial coordinates
+    z = df['DSCI'].astype(float), # Data to be color-coded
+    locationmode = 'USA-states', # set of locations match entries in `locations`
+    colorscale = 'reds',
+    colorbar_title = "가뭄지수"
+    ))
+    fig.update_layout(
+        title_text = '미국 주별 가뭄지수',
+        geo_scope='usa' # limite map scope to USA
+    )
+    st.write(fig)
     
 elif selected_item == "지역별 옥수수 생산량":
     fig = go.Figure(data=go.Choropleth(

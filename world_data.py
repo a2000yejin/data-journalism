@@ -70,6 +70,8 @@ Drought = Drought.drop(['Year'], axis=1)
 
 if st.button("가뭄 데이터 자세히"):
     st.line_chart(Drought)
+    caption9 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수></p>'
+    st.markdown(caption9, unsafe_allow_html=True)
 
 US_Maize = pd.read_csv('US_Maize.csv',  encoding='cp949')
 US_Maize = US_Maize.loc[2]

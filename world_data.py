@@ -53,7 +53,7 @@ st.write("PDSI 지수가 눈에 띄게 높거나 낮았던 해가 언제인지 �
 st.write("우선, 1988, 2012년도에는 PDSI 지수가 눈에 띄게 급락했지. 대가뭄으로 인해 옥수수 생산량이 뚝 떨어지게 된 눈물겨운 시기였어.")
 st.write("반대로 1983년, 2000년도에는 PDSI 지수가 대폭 상승했어. 가뭄도 아닌데 옥수수 생산량이 뚝 떨어졌다니 이해가 되지 않는다고? 무엇이든 과유불급이기 마련. 이 시기에는 미국에 대홍수가 일어나 옥수수 생산량에 큰 타격을 입게 된 것이지.")
 
-image0 = Image.open('comparison2.png')
+image0 = Image.open('comparison_new.png')
 st.image(image0)
 caption1 = '<p style = "color:gray;"><캡션: 1980-2020년 미국 PDSI 지수와 옥수수 생산량(단위: 1억톤)></p>'
 st.markdown(caption1, unsafe_allow_html=True)

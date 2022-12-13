@@ -101,15 +101,32 @@ if selected_item == "지역별 가뭄":
     st.markdown(caption2, unsafe_allow_html=True)
     
 elif selected_item == "지역별 옥수수 생산량":
-    image2 = Image.open('cornyield.png')
-    st.image(image2)
-    caption3 = '<p style = "color:gray;"><캡션: 미국 지역별 옥수수 생산량></p>'
-    st.markdown(caption3, unsafe_allow_html=True)
+    fig = go.Figure(data=go.Choropleth(
+    locations=df['States'], # Spatial coordinates
+    z = df['Acres'].astype(float), # Data to be color-coded
+    locationmode = 'USA-states', # set of locations match entries in `locations`
+    colorscale = 'greens',
+    colorbar_title = "Acres"
+    ))
+    fig.update_layout(
+        title_text = '주별 옥수수 생산량',
+        geo_scope='usa' # limite map scope to USA
+    )
+    st.write(fig)
+    
 elif selected_item == "전년대비 지역별 옥수수 생산량":
-    image3 = Image.open('cornyieldcomparison.png')
-    st.image(image3)
-    caption4 = '<p style = "color:gray;"><캡션: 미국 지역별 전년대비 옥수수 생산량></p>'
-    st.markdown(caption4, unsafe_allow_html=True)
+    fig = go.Figure(data=go.Choropleth(
+    locations=df['States'], # Spatial coordinates
+    z = df['percent changes'].astype(float), # Data to be color-coded
+    locationmode = 'USA-states', # set of locations match entries in `locations`
+    colorscale = 'viridis',
+    colorbar_title = "증감률(%)"
+    ))
+    fig.update_layout(
+        title_text = '전년 대비 지역별 옥수수 생산량 증감률',
+        geo_scope='usa' # limite map scope to USA
+    )
+    st.write(fig)
 
 st.write("더 무서운 건 뭔 지 알아? 이 가뭄이 언제 끝날지 모른다는 점이야. 가뭄이 시작된 지 20년도 넘은 2021년이 최악으로 건조한 해로 기록된 만큼, 전문가들은 가뭄이 앞으로 10년 넘게 이어질 수도 있다고 봐.",
          "듣기만 해도 무시무시한 ‘메가가뭄’이 진행 중인 것이지.")

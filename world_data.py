@@ -143,8 +143,8 @@ elif selected_item == "전년대비 지역별 옥수수 생산량":
 
 st.write("현재 2022년 미국의 가뭄 현황과 전년 대비 옥수수 생산량 증감률을 비교하면 다음과 같아.")   
 from PIL import Image
-image1 = Image.open('comparison.png')
-st.image(image1)
+image_comparison = Image.open('comparison.png')
+st.image(image_comparison)
 st.write("동그라미 친 주요 옥수수 생산 지역에서 특히 가뭄이 심하고, 옥수수 생산량도 감소한 것을 볼 수 있어.")  
     
 st.write("더 무서운 건 뭔 지 알아? 이 가뭄이 언제 끝날지 모른다는 점이야. 가뭄이 시작된 지 20년도 넘은 2021년이 최악으로 건조한 해로 기록된 만큼, 전문가들은 가뭄이 앞으로 10년 넘게 이어질 수도 있다고 봐.",

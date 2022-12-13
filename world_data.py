@@ -124,7 +124,7 @@ multi_select_list = ['World', 'Northern Hemisphere', 'Southern Hemisphere']
 multi_select_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list, key=1, default=['World'])
 df_temp = pd.DataFrame()
-caption5 = '<p style = "color:gray;"><캡션: 1951-1980년 평균 기준 지구 온도의 변화폭 (단위: 섭씨)></p>'
+caption5 = '<p style = "color:gray;"><캡션: 1951-1980년 평균 기준 지구 온도의 변화폭 (단위: °C)></p>'
 
 selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2)	
 
@@ -164,6 +164,7 @@ st.markdown("***")
 st.write("겨울 기온이 올라가는 현상이 특히 문제야. 겨울 기온이 상승하면 북반구가 눈으로 얻는 강우량이 줄어들지.",
          "연간 강우량이 일정하더라도 눈이 쌓여 단단해진 층(snowpack)이 줄어들면 수자원 공급에 문제가 생기고 연어 등 다양한 생물의 생태계에 큰 교란이 일어나.",
          "또한 눈이 줄면 지구 복사열이 줄어들어 기후 온난화가 심화되는 악순환이 일어나지.")
+caption6 = '<p style = "color:gray;"><캡션: 1951-1980년 평균 기준 겨울 온도의 변화폭 (단위: °C)></p>'
 def show_winter_temp(region):
     region_temp = total_climate[total_climate['Entity'] == region][['Date', 'Temperature anomaly']]
     region_temp = region_temp.dropna()
@@ -177,12 +178,15 @@ def show_winter_temp(region):
 
 if st.button("World"):
     show_winter_temp("World")
+    st.markdown(caption6, unsafe_allow_html=True)
 
 if st.button("Northern Hemisphere"):
     show_winter_temp("Northern Hemisphere")
+    st.markdown(caption6, unsafe_allow_html=True)
 
 if st.button("Southern Hemisphere"):
     show_winter_temp("Southern Hemisphere")
+    st.markdown(caption6, unsafe_allow_html=True)
 
 
 # ===================
@@ -195,6 +199,7 @@ multi_select_list2 = ['World', 'Northern Hemisphere', 'Southern Hemisphere', 'Tr
 multi_select_sea_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list2, key=3, default=['World'])
 df_sea_temp = pd.DataFrame()
+caption7 = '<p style = "color:gray;"><캡션: 1961-1990년 평균 기준 지구 해수면 온도의 변화폭 (단위: °C)></p>'
 
 selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=4)	
 
@@ -211,8 +216,10 @@ if multi_select_sea_temp:
 
     if selected_item == "표":
         draw_chart(df_sea_temp)
+        st.markdown(caption7, unsafe_allow_html=True)
     elif selected_item == "라인 그래프":
         st.line_chart(df_sea_temp)
+        st.markdown(caption7, unsafe_allow_html=True)
     elif selected_item == "히트맵":
         mask = (total_climate['Entity'].isin(multi_select_sea_temp))
         sea_temp_heatmap = total_climate[mask][['Date', 'Entity', 'monthly_sea_surface_temperature_anomaly']]
@@ -224,6 +231,7 @@ if multi_select_sea_temp:
         ax2 = sns.heatmap(heatmap2_data, cmap="coolwarm", center=0)
         ax2.set(xlabel="", ylabel="")
         st.write(fig2)
+        st.markdown(caption7, unsafe_allow_html=True)
 
 st.subheader("그러면 벌써 옥수수 생산량이 많이 줄어든 거야?")
 st.write("다행히 아직 많이 줄어들 진 않았어! 옥수수의 생산량은 기후 뿐만 아니라 옥수수 품종, 생산 기술력 등 다양한 요인에 영향을 받거든.",
@@ -237,6 +245,7 @@ st.write("따라서 앞으로 가뭄이 빈번하게 발생하고 기후위기�
 st.subheader("그래도 우리나라에서 옥수수 많이 자라고 있지..?🌽🙄")
 st.write("대답부터 해주자면 전혀.")
 st.write("현재 우리나라의 옥수수 자급률*은 7.9%로 매우 낮은 수치야. 우리나라와 자급률이 비슷한 국가로는 콩고와 자메이카가 있어. 특히 자급률 계산 시 사용한 국내 옥수수 생산량에 우리가 먹는 식용 옥수수 뿐만 아니라 가축 사료, 바이오에너지 등에 이용되는 옥수수까지 포함되어 있다는 점을 고려하면, 우리가 실제로 먹는 옥수수와 팝콘은 거의 우리나라에서 재배되지 않는다고 봐도 무방해.")
+st.write("아래 지도를 보면 국가별 옥수수 자급률에 따라 색을 다르게 칠해뒀어. 노란색에 가까울 수록 옥수수 자급률이 좋은 편이고 보라색에 가까울 수록 옥수수 자급률이 낮은 편인데, 우리나라를 봐. 아주 진한 보라색이지? 우리나라가 옥수수 소비의 대부분을 수입에 의존하고 있다는 뜻이야.")
 
 sufficiency_def = '<p style = "color:gray;">*옥수수 자급률 = 국내 옥수수 생산량/국내 옥수수 소비량</p>'
 st.markdown(sufficiency_def, unsafe_allow_html=True)
@@ -251,6 +260,11 @@ fig3 = px.choropleth(self_sufficiency, geojson=countries, locations='Country', l
                           )
 fig3.update_layout(autosize=False, margin={"r":0,"t":0,"l":0,"b":0}, width=1000)
 st.write(fig3)
+
+caption8 = '<p style = "color:gray;"><캡션: 세계 옥수수 자급률 (단위: 톤/톤)><br>최대값은 4535가 넘지만  2000을 넘는 국가는 5개고 나머지는 2000 이하이기 때문에 자급률 간 차이를 자세히 보고자 2000 이상은 노란색으로 처리함<br></p>',
+'<p style = "color:gray;">흰색은 데이터 값이 없는 부분임. 유럽은 EU 통합지역으로 데이터가 주어져 나라별 데이터는 표시하지 못하였지만 우리의 초점은 한국의 낮은 자급률임.</p>'
+st.markdown(caption8, unsafe_allow_html=True)
+
 
 st.write("그럼 우리나라는 어디서 옥수수를 수입해 오는 걸까? 대한무역협회에 따르면 우리나라는 아르헨티나에 이어 미국으로부터 옥수수를 가장 많이 수입하고 있어. 우리가 지금까지 미국의 옥수수 생산량을 살펴본 이유도 미국이 옥수수 생산량 1위 국가이기도 하지만, 우리나라 옥수수 수급에 특히 많은 영향을 끼치고 있는 나라이기 때문이야.")
 st.write("이렇게 옥수수의 수입의존도가 높은 상황에서, 한국의 2위 옥수수 수입대상국인 미국이 빈번한 가뭄으로 인해 옥수수 생산량의 감소를 피하지 못한다면 팝콘을 먹으며 영화를 보는 설렘은 물론, 추운 겨울 따뜻한 방에 앉아 옥수수를 먹는 즐거움은 정말로 추억 속으로 사라지게 될 수도 있어.")

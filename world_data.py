@@ -109,10 +109,10 @@ st.text("")
 total_climate = load_data('climate_change.csv')
 multi_select_list = ['World', 'Northern Hemisphere', 'Southern Hemisphere']
 multi_select_temp = st.multiselect('지역을 선택해주세요!',
-                             multi_select_list, key=1)
+                             multi_select_list, key=1, default=['World'])
 df_temp = pd.DataFrame()
 
-selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2)	
+selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2, default=['히트맵'])	
 
 if multi_select_temp:
     for i in multi_select_temp:
@@ -176,10 +176,10 @@ st.write("아래는 해수면 온도가 1961년-1990년 평균으로부터 얼�
 st.text("")
 multi_select_list2 = ['World', 'Northern Hemisphere', 'Southern Hemisphere', 'Tropics']
 multi_select_sea_temp = st.multiselect('지역을 선택해주세요!',
-                             multi_select_list2, key=3)
+                             multi_select_list2, key=3, default=['World'])
 df_sea_temp = pd.DataFrame()
 
-selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=4)	
+selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=4, default=['히트맵'])	
 
 if multi_select_sea_temp:
     for i in multi_select_sea_temp:

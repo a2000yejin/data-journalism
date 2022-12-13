@@ -250,3 +250,12 @@ st.write("더 이상 기후위기는 나와 상관 없는 먼 미래의 일이 �
 st.text("")        
 st.write("맛있는 팝콘이 부디 지구에서 사라지지 않기를 🙏")
 
+st.text("")   
+st.markdown("***")
+st.subheader("")
+st.write("https://www.yna.co.kr/view/AKR20220913051600009")
+st.write("https://www.nongmin.com/news/NEWS/ECO/WLD/363286/view#:~:text=콩 생산량도 예상치 밑돌아&text=등의 최근 보도,3315만t")
+st.write("https://www.hani.co.kr/arti/society/environment/1050887.html")
+st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?")
+st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244,322,245,484,246,444,242,505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
+st.write("https://m.khan.co.kr/world/america/article/202202152233025#c2b")

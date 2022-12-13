@@ -25,7 +25,7 @@ st.title("몇 년 뒤... 더 이상 팝콘을 못 먹게 될 수도 있다? 🍿
 st.write("_오리지널, 카라멜, 콘소메, 치즈 …_")
 col1, col2 = st.columns(2)
 with col1:
-    st.image("popcorn.jpg")
+    st.image("popcorn.jpg", width = 150)
 
 with col2:
     st.write("영화관에 있는 다양한 맛의 팝콘들을 보면 사람들이 팝콘을 얼마나 사랑하고 있는지 알 수 있지. 고소하면서 짭짤한 팝콘은 영화 감상에 있어 필수품이라고.")
@@ -41,7 +41,7 @@ with col1:
     climate_change_def = '<p style = "color:gray;">*기후위기: 기후 변화로 인해 위험이 증가하는 현실을 뜻하는 용어로, 지구의 평균 기온이 점진적으로 상승하면서 전지구적 기후 패턴이 급격하게 변화하는 현상을 통틀어 일컫는 말</p>'
     st.markdown(climate_change_def, unsafe_allow_html=True)
 with col2:
-    st.image("corn_drought.jpg", width=290)
+    st.image("corn_drought.jpg", width=280)
     
 
 

@@ -95,7 +95,7 @@ st.text("")
 import plotly.graph_objects as go
 
 import pandas as pd
-df = pd.read_csv("/Users/yennie/Downloads/maize harvest areas.csv")
+df = pd.read_csv("maize harvest areas.csv")
 
 selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)

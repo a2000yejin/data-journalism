@@ -291,3 +291,7 @@ with st.expander("출처 보기"):
     st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?")
     st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244,322,245,484,246,444,242,505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
     st.write("https://m.khan.co.kr/world/america/article/202202152233025#c2b")
+
+st.markdown("***")
+writers = '<p style = "color:gray;"> 작성자: 데이터 저널리즘 6조😍 - 김예진, 박규리, 송예은, 정은서 </p>'
+st.markdown(writers, unsafe_allow_html=True)

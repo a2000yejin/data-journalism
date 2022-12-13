@@ -39,7 +39,7 @@ with col1:
     st.write("옥수수가 왕성하게 자라날 수 있는 온도가 높은 시기 (7-8월)에 옥수수를 갈증 나게 하면 옥수수는 참지 않아.")
     st.write("무심하게 내버려 두어도 혼자서도 쑥쑥 자라나는 기특한 녀석으로 입 소문이 자자한 옥수수라 괜찮을 줄 알았다고? 방심은 금물. 토양 수분을 가장 많이 필요로 하는 개화기 전후에 가뭄이 온다면 얄짤 없다고.")
 with col2:
-    st.image("corn_drought.jpg", width=100)
+    st.image("corn_drought.jpg", width=300)
     
 climate_change_def = '<p style = "color:gray;">*기후위기: 기후 변화로 인해 위험이 증가하는 현실을 뜻하는 용어로, 지구의 평균 기온이 점진적으로 상승하면서 전지구적 기후 패턴이 급격하게 변화하는 현상을 통틀어 일컫는 말</p>'
 st.markdown(climate_change_def, unsafe_allow_html=True)

@@ -41,7 +41,7 @@ with col1:
     climate_change_def = '<p style = "color:gray;">*기후위기: 기후 변화로 인해 위험이 증가하는 현실을 뜻하는 용어로, 지구의 평균 기온이 점진적으로 상승하면서 전지구적 기후 패턴이 급격하게 변화하는 현상을 통틀어 일컫는 말</p>'
     st.markdown(climate_change_def, unsafe_allow_html=True)
 with col2:
-    st.image("corn_drought.jpg", width=250)
+    st.image("corn_drought.jpg", width=350)
     
 
 

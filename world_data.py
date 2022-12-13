@@ -280,6 +280,8 @@ st.write("더 이상 기후위기는 나와 상관 없는 먼 미래의 일이 �
 st.text("")        
 st.write("맛있는 팝콘이 부디 지구에서 사라지지 않기를 🙏")
 
+st.image("Food-Tank-36-Climate-Orgs.jpeg")
+
 st.text("")   
 st.markdown("***")
 st.subheader("출처")

@@ -23,9 +23,15 @@ def draw_chart(df_data):
 #홈페이지 타이틀과 설명
 st.title("몇 년 뒤... 더 이상 팝콘을 못 먹게 될 수도 있다? 🍿🥺")
 st.write("_오리지널, 카라멜, 콘소메, 치즈 …_")
-st.write("영화관에 있는 다양한 맛의 팝콘들을 보면 사람들이 팝콘을 얼마나 사랑하고 있는지 알 수 있지. 고소하면서 짭짤한 팝콘은 영화 감상에 있어 필수품이라고.",
+col1, col2 = st.columns(2)
+with col1:
+    st.write("영화관에 있는 다양한 맛의 팝콘들을 보면 사람들이 팝콘을 얼마나 사랑하고 있는지 알 수 있지. 고소하면서 짭짤한 팝콘은 영화 감상에 있어 필수품이라고.",
         "요즘에는 편의점이나 대형 마트에서도 다양한 마트의 팝콘을 만나볼 수 있지. 그만큼 팝콘은 현재 많은 사람들이 즐겨먹는 간식거리로 자리 잡았어.")
-st.write("그러나 어쩌면 10년 후 우리는 더 이상 영화를 볼 때 팝콘을 먹지 못할 수도 있어. 다름 아닌 기후위기 때문에..!")
+    st.write("그러나 어쩌면 10년 후 우리는 더 이상 영화를 볼 때 팝콘을 먹지 못할 수도 있어. 다름 아닌 기후위기 때문에..!")
+
+with col2:
+   st.image("popcorn.jpg")
+
 
 st.subheader("엥? 기후 위기랑 옥수수가 무슨 상관인데?")
 st.write("옥수수(maize)는 기후 변화에 민감한 주식이야. 특히 가뭄과 같은 기후 현상으로 인해 고온 건조한 날씨가 지속될 시 옥수수 생산에 치명적이지.") 
@@ -81,7 +87,6 @@ selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역�
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
     st.write("미국 지역별 가뭄 (2022.12.06)")
-    from PIL import Image
     image1 = Image.open('us_drought.png')
     st.image(image1)
 elif selected_item == "지역별 옥수수 생산량":

@@ -91,18 +91,21 @@ st.text("")
 selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
-    st.write("미국 지역별 가뭄 (2022.12.06)")
     image1 = Image.open('us_drought.png')
     st.image(image1)
+    caption2 = '<p style = "color:gray;"><캡션: 미국 지역별 가뭄></p>'
+    st.markdown(caption2, unsafe_allow_html=True)
+    
 elif selected_item == "지역별 옥수수 생산량":
-    st.write("미국 지역별 옥수수 생산량")
-    from PIL import Image
     image2 = Image.open('cornyield.png')
     st.image(image2)
+    caption3 = '<p style = "color:gray;"><캡션: 미국 지역별 옥수수 생산량></p>'
+    st.markdown(caption3, unsafe_allow_html=True)
 elif selected_item == "전년대비 지역별 옥수수 생산량":
-    st.write("미국 지역별 전년대비 옥수수 생산량")
     image3 = Image.open('cornyieldcomparison.png')
     st.image(image3)
+    caption4 = '<p style = "color:gray;"><캡션: 미국 지역별 전년대비 옥수수 생산량></p>'
+    st.markdown(caption4, unsafe_allow_html=True)
 
 st.write("더 무서운 건 뭔 지 알아? 이 가뭄이 언제 끝날지 모른다는 점이야. 가뭄이 시작된 지 20년도 넘은 2021년이 최악으로 건조한 해로 기록된 만큼, 전문가들은 가뭄이 앞으로 10년 넘게 이어질 수도 있다고 봐.",
          "듣기만 해도 무시무시한 ‘메가가뭄’이 진행 중인 것이지.")
@@ -121,6 +124,7 @@ multi_select_list = ['World', 'Northern Hemisphere', 'Southern Hemisphere']
 multi_select_temp = st.multiselect('지역을 선택해주세요!',
                              multi_select_list, key=1, default=['World'])
 df_temp = pd.DataFrame()
+caption5 = '<p style = "color:gray;"><캡션: 1951-1980년 평균 기준 지구 온도의 변화폭 (단위: 섭씨)></p>'
 
 selected_item = st.radio("데이터 형식을 선택해주세요!", ("표", "라인 그래프", "히트맵"), key=2)	
 
@@ -137,8 +141,10 @@ if multi_select_temp:
 
     if selected_item == "표":
         draw_chart(df_temp)
+        st.markdown(caption5, unsafe_allow_html=True)
     elif selected_item == "라인 그래프":
         st.line_chart(df_temp)
+        st.markdown(caption5, unsafe_allow_html=True)
     elif selected_item == "히트맵":
         mask = (total_climate['Entity'].isin(multi_select_temp))
         temp_heatmap = total_climate[mask][['Date', 'Entity', 'Temperature anomaly']]
@@ -150,6 +156,7 @@ if multi_select_temp:
         ax1 = sns.heatmap(heatmap1_data, cmap="coolwarm", center=0)
         ax1.set(xlabel="", ylabel="")
         st.write(fig1)
+        st.markdown(caption5, unsafe_allow_html=True)
 
 st.markdown("***")
 

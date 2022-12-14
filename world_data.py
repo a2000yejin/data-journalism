@@ -322,14 +322,10 @@ st.text("")
 st.markdown("***")
 st.subheader("출처")
 with st.expander("출처 보기"):
-    st.write("가뭄 탓 미국 옥수수 수확 전망치 '10년만 최저'\n
-              https://www.yna.co.kr/view/AKR20220913051600009")
-    st.write("미국 남서부 1200년 만의 최악 대가뭄, 언제 끝날지 모른다\n
-              https://m.khan.co.kr/world/america/article/202202152233025#c2b")
-    st.write("껑충 뛴 옥수수 가격, 주목해야 할 미국 옥수수 시장 동향\n
-              https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244%2C322%2C245%2C484%2C246%2C444%2C242%2C505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
-    st.write("개인이 기후위기와 싸울 수 있는 10가지 방법, 어때요?\n
-              https://www.hani.co.kr/arti/society/environment/1050887.html")
+    st.write("가뭄 탓 미국 옥수수 수확 전망치 10년만 최저\nhttps://www.yna.co.kr/view/AKR20220913051600009")
+    st.write("미국 남서부 1200년 만의 최악 대가뭄, 언제 끝날지 모른다\nhttps://m.khan.co.kr/world/america/article/202202152233025#c2b")
+    st.write("껑충 뛴 옥수수 가격, 주목해야 할 미국 옥수수 시장 동향\nhttps://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244%2C322%2C245%2C484%2C246%2C444%2C242%2C505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
+    st.write("개인이 기후위기와 싸울 수 있는 10가지 방법, 어때요?\nhttps://www.hani.co.kr/arti/society/environment/1050887.html")
     
 st.markdown("***")
 writers = '<p style = "color:gray;"> 작성자: 데이터 저널리즘 6조😍 - 김예진, 박규리, 송예은, 정은서 </p>'

@@ -116,16 +116,17 @@ if selected_item == "지역별 가뭄":
 elif selected_item == "지역별 옥수수 생산량":
     fig = go.Figure(data=go.Choropleth(
     locations=df['States'], # Spatial coordinates
-    z = df['Acres'].astype(float), # Data to be color-coded
+    z = df['Quantity'].astype(float), # Data to be color-coded
     locationmode = 'USA-states', # set of locations match entries in `locations`
     colorscale = 'greens',
-    colorbar_title = "Acres"
+    colorbar_title = "Bushel"
     ))
     fig.update_layout(
         title_text = '주별 옥수수 생산량',
         geo_scope='usa' # limite map scope to USA
     )
     st.write(fig)
+    caption12 = '<p style = "color:gray;"><캡션: 1bushel = 약 25.4kg)></p>'
     
 elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     fig = go.Figure(data=go.Choropleth(

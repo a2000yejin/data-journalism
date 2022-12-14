@@ -144,11 +144,11 @@ elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
 with st.expander("가뭄지수(DSCI)란?"):
     st.write("DSCI(Drought Severity and Coverage Index):\n해당 지역의 가뭄 분류(D0, D1, D2, D3, D4)의 비율을 모두 더한 값")
     st.markdown("* 가뭄 분류(drought classification):")
-    st.markdown("   *D0 - abnormally dry : PSDI 지수 -1.0 ~ -1.9")
-    st.markdown("   *D1 - Moderate Drought : PSDI 지수 -2.0 ~ -2.9")
-    st.markdown("   *D2 - Severe Drought : PSDI 지수 -3.0 ~ -3.9")
-    st.markdown("   *D3 - Extreme Drought : PSDI 지수 -4.0 ~ -4.9")
-    st.markdown("   *D4 - Exceptional Drought : PSDI 지수 -5.0 ~")
+    st.write("D0 - abnormally dry : PSDI 지수 -1.0 ~ -1.9")
+    st.write("D1 - Moderate Drought : PSDI 지수 -2.0 ~ -2.9")
+    st.write("D2 - Severe Drought : PSDI 지수 -3.0 ~ -3.9")
+    st.write("D3 - Extreme Drought : PSDI 지수 -4.0 ~ -4.9")
+    st.write("D4 - Exceptional Drought : PSDI 지수 -5.0 ~")
 
 st.write("현재 2022년 미국의 가뭄 현황과 전년 대비 옥수수 생산량 증감률을 비교하면 다음과 같아.")   
 from PIL import Image

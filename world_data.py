@@ -101,9 +101,9 @@ selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역�
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
     fig = go.Figure(data=go.Choropleth(
-    locations=df['States'], # Spatial coordinates
-    z = df['DSCI'].astype(float), # Data to be color-coded
-    locationmode = 'USA-states', # set of locations match entries in `locations`
+    locations=df['States'],
+    z = df['DSCI'].astype(float),
+    locationmode = 'USA-states',
     colorscale = 'reds',
     colorbar_title = "가뭄지수"
     ))
@@ -115,9 +115,9 @@ if selected_item == "지역별 가뭄":
 
 elif selected_item == "지역별 옥수수 생산량":
     fig = go.Figure(data=go.Choropleth(
-    locations=df['States'], # Spatial coordinates
-    z = df['Quantity'].astype(float), # Data to be color-coded
-    locationmode = 'USA-states', # set of locations match entries in `locations`
+    locations=df['States'], 
+    z = df['Quantity'].astype(float), 
+    locationmode = 'USA-states',
     colorscale = 'greens',
     colorbar_title = "Bushel"
     ))
@@ -129,9 +129,9 @@ elif selected_item == "지역별 옥수수 생산량":
     
 elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     fig = go.Figure(data=go.Choropleth(
-    locations=df['States'], # Spatial coordinates
-    z = df['percent changes'].astype(float), # Data to be color-coded
-    locationmode = 'USA-states', # set of locations match entries in `locations`
+    locations=df['States'],
+    z = df['percent changes'].astype(float),
+    locationmode = 'USA-states',
     colorscale = 'viridis',
     colorbar_title = "증감률(%)"
     ))

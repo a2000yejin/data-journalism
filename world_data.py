@@ -140,9 +140,10 @@ elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
         geo_scope='usa'
     )
     st.write(fig)
+    
 if st.button("가뭄지수(DSCI)란?"):
     st.write("DSCI(Drought Severity and Coverage Index)란, 해당 지역의 가뭄 분류(D0, D1, D2, D3, D4)의 비율을 모두 더한 값입니다.\n
-             *가뭄 분류(drought classification):\n
+             가뭄 분류(drought classification):\n
              D0 - abnormally dry : PSDI 지수 -1.0 ~ -1.9\n
              D1 - Moderate Drought : PSDI 지수 -2.0 ~ -2.9\n
              D2 - Severe Drought : PSDI 지수 -3.0 ~ -3.9\n

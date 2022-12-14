@@ -119,15 +119,13 @@ elif selected_item == "지역별 옥수수 생산량":
     z = df['Quantity'].astype(float), 
     locationmode = 'USA-states',
     colorscale = 'greens',
-    colorbar_title = "Bushel"
+    colorbar_title = "Bushel\n1 bushel = 25.4kg"
     ))
     fig.update_layout(
         title_text = '주별 옥수수 생산량',
         geo_scope='usa'
     )
     st.write(fig)
-    caption_bushel = '<p style = "color:gray;"><참고: 1bushel = 25.4kg)></p>'
-    st.markdown(caption_bushel, unsafe_allow_html=True)
     
 elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     fig = go.Figure(data=go.Choropleth(

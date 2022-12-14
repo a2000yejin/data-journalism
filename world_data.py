@@ -108,7 +108,7 @@ if selected_item == "지역별 가뭄":
     colorbar_title = "가뭄지수"
     ))
     fig.update_layout(
-        title_text = '미국 주별 가뭄지수',
+        title_text = '미국 주별 가뭄지수 (DSCI)',
         geo_scope='usa'
     )
     st.write(fig)
@@ -119,10 +119,10 @@ elif selected_item == "지역별 옥수수 생산량":
     z = df['Quantity'].astype(float), 
     locationmode = 'USA-states',
     colorscale = 'greens',
-    colorbar_title = "Bushel\n1 bushel = 25.4kg"
+    colorbar_title = "Bushel"
     ))
     fig.update_layout(
-        title_text = '주별 옥수수 생산량',
+        title_text = '주별 옥수수 생산량 (단위: Bushel, 1 Bushel = 25.4kg)',
         geo_scope='usa'
     )
     st.write(fig)
@@ -136,10 +136,18 @@ elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     colorbar_title = "증감률(%)"
     ))
     fig.update_layout(
-        title_text = '전년 대비 지역별 옥수수 생산량 증감률',
+        title_text = '전년 대비 지역별 옥수수 생산량 증감률 (단위 = %)',
         geo_scope='usa'
     )
     st.write(fig)
+if st.button("가뭄지수(DSCI)란?"):
+    st.write("DSCI(Drought Severity and Coverage Index)란, 해당 지역의 가뭄 분류(D0, D1, D2, D3, D4)의 비율을 모두 더한 값입니다.\n
+             *가뭄 분류(drought classification):\n
+             D0 - abnormally dry : PSDI 지수 -1.0 ~ -1.9\n
+             D1 - Moderate Drought : PSDI 지수 -2.0 ~ -2.9\n
+             D2 - Severe Drought : PSDI 지수 -3.0 ~ -3.9\n
+             D3 - Extreme Drought : PSDI 지수 -4.0 ~ -4.9\n
+             D4 - Exceptional Drought : PSDI 지수 -5.0 ~")
 
 st.write("현재 2022년 미국의 가뭄 현황과 전년 대비 옥수수 생산량 증감률을 비교하면 다음과 같아.")   
 from PIL import Image

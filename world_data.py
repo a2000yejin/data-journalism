@@ -97,7 +97,7 @@ import plotly.graph_objects as go
 import pandas as pd
 df = pd.read_csv("maize harvest areas.csv")
 
-selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량"))	
+selected_item = st.radio("보고싶은 지도를 선택해주세요!",("지역별 가뭄", "지역별 옥수수 생산량", "전년대비 지역별 옥수수 생산량 증감률"))	
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 if selected_item == "지역별 가뭄":
     fig = go.Figure(data=go.Choropleth(
@@ -126,6 +126,8 @@ elif selected_item == "지역별 옥수수 생산량":
         geo_scope='usa'
     )
     st.write(fig)
+    caption_bushel = '<p style = "color:gray;"><참고: 1bushel = 25.4kg)></p>'
+    st.markdown(caption_bushel, unsafe_allow_html=True)
     
 elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     fig = go.Figure(data=go.Choropleth(

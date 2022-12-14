@@ -25,7 +25,7 @@ st.title("몇 년 뒤... 더 이상 팝콘을 못 먹게 될 수도 있다? 🍿
 popcorn_flavour = '<p style = "color:#FFA533;"><em>오리지널, 카라멜, 콘소메, 치즈 …</em></p>'
 st.markdown(popcorn_flavour, unsafe_allow_html=True)
 st.write("영화관에 있는 다양한 맛의 팝콘들을 보면 사람들이 팝콘을 얼마나 사랑하고 있는지 알 수 있지. 고소하면서 짭짤한 팝콘은 영화 감상에 있어 필수품이라고.")
-st.write("그러나 어쩌면 10년 후 우리는 더 이상 영화를 볼 때 팝콘을 먹지 못할 수도 있어. 다름 아닌 기후위기 때문에..!")
+st.write("그런데 어쩌면 10년 후, 우리는 더 이상 영화를 볼 때 팝콘을 먹지 못할 수도 있어. 다름 아닌 기후위기 때문에..!")
 
 
 st.subheader("엥? 기후 위기랑 팝콘이 무슨 상관인데?")
@@ -112,7 +112,7 @@ if selected_item == "지역별 가뭄":
         geo_scope='usa' # limite map scope to USA
     )
     st.write(fig)
-    
+
 elif selected_item == "지역별 옥수수 생산량":
     fig = go.Figure(data=go.Choropleth(
     locations=df['States'], # Spatial coordinates
@@ -127,7 +127,7 @@ elif selected_item == "지역별 옥수수 생산량":
     )
     st.write(fig)
     
-elif selected_item == "전년대비 지역별 옥수수 생산량":
+elif selected_item == "전년대비 지역별 옥수수 생산량 증감률":
     fig = go.Figure(data=go.Choropleth(
     locations=df['States'], # Spatial coordinates
     z = df['percent changes'].astype(float), # Data to be color-coded
@@ -322,12 +322,11 @@ st.text("")
 st.markdown("***")
 st.subheader("출처")
 with st.expander("출처 보기"):
-    st.write("https://www.yna.co.kr/view/AKR20220913051600009")
-    st.write("https://www.hani.co.kr/arti/society/environment/1050887.html")
-    st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?")
-    st.write("https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244,322,245,484,246,444,242,505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
-    st.write("https://m.khan.co.kr/world/america/article/202202152233025#c2b")
-
+    st.write("가뭄 탓 미국 옥수수 수확 전망치 '10년만 최저'\nhttps://www.yna.co.kr/view/AKR20220913051600009")
+    st.write("미국 남서부 1200년 만의 최악 대가뭄, 언제 끝날지 모른다\nhttps://m.khan.co.kr/world/america/article/202202152233025#c2b")
+    st.write("껑충 뛴 옥수수 가격, 주목해야 할 미국 옥수수 시장 동향\nhttps://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=1&pagePerCnt=10&SITE_NO=3&MENU_ID=70&CONTENTS_NO=1&bbsGbn=00&bbsSn=244%2C322%2C245%2C484%2C246%2C444%2C242%2C505&pNttSn=194436&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&sSearchVal=")
+    st.write("개인이 기후위기와 싸울 수 있는 10가지 방법, 어때요?\nhttps://www.hani.co.kr/arti/society/environment/1050887.html")
+    
 st.markdown("***")
 writers = '<p style = "color:gray;"> 작성자: 데이터 저널리즘 6조😍 - 김예진, 박규리, 송예은, 정은서 </p>'
 st.markdown(writers, unsafe_allow_html=True)
